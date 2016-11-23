@@ -12,5 +12,7 @@
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
         <source-file src="src/android/SunmiPrinter.java" target-dir="src/sunmi/printer/SunmiPrinter" />
+        <source-file src="aidl/ICallback.aidl" target-dir="src/sunmi/printer/SunmiPrinter" />
+        <source-file src="aidl/IWoyouService.aidl" target-dir="src/sunmi/printer/SunmiPrinter" />
     </platform>
 </plugin>
