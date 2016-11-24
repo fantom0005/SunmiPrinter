@@ -14,6 +14,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.content.Intent;
 import android.content.Context;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +24,7 @@ import org.json.JSONObject;
  * This class echoes a string called from JavaScript.
  */
 public class SunmiPrinter extends CordovaPlugin {
-
+    private static final String TAG = "PrinterTestDemo";
     private IWoyouService woyouService;
     private ICallback callback = null;
 
@@ -44,6 +45,7 @@ public class SunmiPrinter extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
+        Log.i(TAG,"printlength:" + value + "\n");	
         callback = new ICallback.Stub() {
 			
 			@Override
@@ -51,7 +53,8 @@ public class SunmiPrinter extends CordovaPlugin {
 			}
 			
 			@Override
-			public void onReturnString(final String value) throws RemoteException {			
+			public void onReturnString(final String value) throws RemoteException {		
+                Log.i(TAG,"printlength:" + value + "\n");		
 			}
 			
 			@Override
