@@ -45,7 +45,7 @@ public class SunmiPrinter extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        Log.i(TAG,"printlength:" + value + "\n");	
+        Log.i(TAG,"printlength:\n");	
         callback = new ICallback.Stub() {
 			
 			@Override
