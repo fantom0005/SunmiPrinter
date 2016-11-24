@@ -53,7 +53,7 @@ public class SunmiPrinter extends CordovaPlugin {
 			
 			@Override
 			public void onRaiseException(int code, final String msg) throws RemoteException {
-				runOnUiThread(new Runnable(){
+				cordova.getActivity().runOnUiThread(new Runnable(){
 					@Override
 					public void run() {
 					}});
