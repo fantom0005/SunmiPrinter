@@ -45,7 +45,7 @@ public class SunmiPrinter extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        Log.i(TAG,"printlength:\n");	
+        Log.v(TAG,"printlength:\n");	
         callback = new ICallback.Stub() {
 			
 			@Override
@@ -53,8 +53,7 @@ public class SunmiPrinter extends CordovaPlugin {
 			}
 			
 			@Override
-			public void onReturnString(final String value) throws RemoteException {		
-                Log.i(TAG,"printlength:" + value + "\n");		
+			public void onReturnString(final String value) throws RemoteException {			
 			}
 			
 			@Override
