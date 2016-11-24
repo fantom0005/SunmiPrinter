@@ -4,32 +4,32 @@
  * This file is auto-generated.  DO NOT MODIFY.
  * Original file: /home/fantom/Desktop/PrinterTestDemo/PrinterTestDemo/src/woyou/aidlservice/jiuiv5/IWoyouService.aidl
  */
-package sunmi.printer;
+package sunmi.printer.driver;
 public interface IWoyouService extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements sunmi.printer.IWoyouService
+public static abstract class Stub extends android.os.Binder implements sunmi.printer.driver.IWoyouService
 {
-private static final java.lang.String DESCRIPTOR = "sunmi.printer.IWoyouService";
+private static final java.lang.String DESCRIPTOR = "sunmi.printer.driver.IWoyouService";
 /** Construct the stub at attach it to the interface. */
 public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 /**
- * Cast an IBinder object into an sunmi.printer.IWoyouService interface,
+ * Cast an IBinder object into an sunmi.printer.driver.IWoyouService interface,
  * generating a proxy if needed.
  */
-public static sunmi.printer.IWoyouService asInterface(android.os.IBinder obj)
+public static sunmi.printer.driver.IWoyouService asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
 }
 android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-if (((iin!=null)&&(iin instanceof sunmi.printer.IWoyouService))) {
-return ((sunmi.printer.IWoyouService)iin);
+if (((iin!=null)&&(iin instanceof sunmi.printer.driver.IWoyouService))) {
+return ((sunmi.printer.driver.IWoyouService)iin);
 }
-return new sunmi.printer.IWoyouService.Stub.Proxy(obj);
+return new sunmi.printer.driver.IWoyouService.Stub.Proxy(obj);
 }
 @Override public android.os.IBinder asBinder()
 {
@@ -70,8 +70,8 @@ return true;
 case TRANSACTION_printerInit:
 {
 data.enforceInterface(DESCRIPTOR);
-sunmi.printer.ICallback _arg0;
-_arg0 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg0;
+_arg0 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.printerInit(_arg0);
 reply.writeNoException();
 return true;
@@ -79,8 +79,8 @@ return true;
 case TRANSACTION_printerSelfChecking:
 {
 data.enforceInterface(DESCRIPTOR);
-sunmi.printer.ICallback _arg0;
-_arg0 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg0;
+_arg0 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.printerSelfChecking(_arg0);
 reply.writeNoException();
 return true;
@@ -112,8 +112,8 @@ return true;
 case TRANSACTION_getPrintedLength:
 {
 data.enforceInterface(DESCRIPTOR);
-sunmi.printer.ICallback _arg0;
-_arg0 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg0;
+_arg0 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.getPrintedLength(_arg0);
 reply.writeNoException();
 return true;
@@ -123,8 +123,8 @@ case TRANSACTION_lineWrap:
 data.enforceInterface(DESCRIPTOR);
 int _arg0;
 _arg0 = data.readInt();
-sunmi.printer.ICallback _arg1;
-_arg1 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg1;
+_arg1 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.lineWrap(_arg0, _arg1);
 reply.writeNoException();
 return true;
@@ -134,8 +134,8 @@ case TRANSACTION_sendRAWData:
 data.enforceInterface(DESCRIPTOR);
 byte[] _arg0;
 _arg0 = data.createByteArray();
-sunmi.printer.ICallback _arg1;
-_arg1 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg1;
+_arg1 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.sendRAWData(_arg0, _arg1);
 reply.writeNoException();
 return true;
@@ -145,8 +145,8 @@ case TRANSACTION_setAlignment:
 data.enforceInterface(DESCRIPTOR);
 int _arg0;
 _arg0 = data.readInt();
-sunmi.printer.ICallback _arg1;
-_arg1 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg1;
+_arg1 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.setAlignment(_arg0, _arg1);
 reply.writeNoException();
 return true;
@@ -156,8 +156,8 @@ case TRANSACTION_setFontName:
 data.enforceInterface(DESCRIPTOR);
 java.lang.String _arg0;
 _arg0 = data.readString();
-sunmi.printer.ICallback _arg1;
-_arg1 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg1;
+_arg1 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.setFontName(_arg0, _arg1);
 reply.writeNoException();
 return true;
@@ -167,8 +167,8 @@ case TRANSACTION_setFontSize:
 data.enforceInterface(DESCRIPTOR);
 float _arg0;
 _arg0 = data.readFloat();
-sunmi.printer.ICallback _arg1;
-_arg1 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg1;
+_arg1 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.setFontSize(_arg0, _arg1);
 reply.writeNoException();
 return true;
@@ -178,8 +178,8 @@ case TRANSACTION_printText:
 data.enforceInterface(DESCRIPTOR);
 java.lang.String _arg0;
 _arg0 = data.readString();
-sunmi.printer.ICallback _arg1;
-_arg1 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg1;
+_arg1 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.printText(_arg0, _arg1);
 reply.writeNoException();
 return true;
@@ -193,8 +193,8 @@ java.lang.String _arg1;
 _arg1 = data.readString();
 float _arg2;
 _arg2 = data.readFloat();
-sunmi.printer.ICallback _arg3;
-_arg3 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg3;
+_arg3 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.printTextWithFont(_arg0, _arg1, _arg2, _arg3);
 reply.writeNoException();
 return true;
@@ -208,8 +208,8 @@ int[] _arg1;
 _arg1 = data.createIntArray();
 int[] _arg2;
 _arg2 = data.createIntArray();
-sunmi.printer.ICallback _arg3;
-_arg3 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg3;
+_arg3 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.printColumnsText(_arg0, _arg1, _arg2, _arg3);
 reply.writeNoException();
 return true;
@@ -224,8 +224,8 @@ _arg0 = android.graphics.Bitmap.CREATOR.createFromParcel(data);
 else {
 _arg0 = null;
 }
-sunmi.printer.ICallback _arg1;
-_arg1 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg1;
+_arg1 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.printBitmap(_arg0, _arg1);
 reply.writeNoException();
 return true;
@@ -243,8 +243,8 @@ int _arg3;
 _arg3 = data.readInt();
 int _arg4;
 _arg4 = data.readInt();
-sunmi.printer.ICallback _arg5;
-_arg5 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg5;
+_arg5 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.printBarCode(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5);
 reply.writeNoException();
 return true;
@@ -258,8 +258,8 @@ int _arg1;
 _arg1 = data.readInt();
 int _arg2;
 _arg2 = data.readInt();
-sunmi.printer.ICallback _arg3;
-_arg3 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg3;
+_arg3 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.printQRCode(_arg0, _arg1, _arg2, _arg3);
 reply.writeNoException();
 return true;
@@ -269,8 +269,8 @@ case TRANSACTION_printOriginalText:
 data.enforceInterface(DESCRIPTOR);
 java.lang.String _arg0;
 _arg0 = data.readString();
-sunmi.printer.ICallback _arg1;
-_arg1 = sunmi.printer.ICallback.Stub.asInterface(data.readStrongBinder());
+sunmi.printer.driver.ICallback _arg1;
+_arg1 = sunmi.printer.driver.ICallback.Stub.asInterface(data.readStrongBinder());
 this.printOriginalText(_arg0, _arg1);
 reply.writeNoException();
 return true;
@@ -303,7 +303,7 @@ return true;
 }
 return super.onTransact(code, data, reply, flags);
 }
-private static class Proxy implements sunmi.printer.IWoyouService
+private static class Proxy implements sunmi.printer.driver.IWoyouService
 {
 private android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)
@@ -385,7 +385,7 @@ return _result;
 	 * @param callback 
 	 * @return
 	 */
-@Override public void printerInit(sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void printerInit(sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -405,7 +405,7 @@ _data.recycle();
 	* Printer self-inspection, the printer will print a page
 	* @param callback 
 	*/
-@Override public void printerSelfChecking(sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void printerSelfChecking(sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -487,7 +487,7 @@ return _result;
 	* 
 	* Getting the print head's  printing length 
 	*/
-@Override public void getPrintedLength(sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void getPrintedLength(sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -509,7 +509,7 @@ _data.recycle();
 	 * @param callback  
 	 * @return
 	 */
-@Override public void lineWrap(int n, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void lineWrap(int n, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -531,7 +531,7 @@ _data.recycle();
 	* @param data	        command
 	* @param callback  
 	*/
-@Override public void sendRAWData(byte[] data, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void sendRAWData(byte[] data, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -553,7 +553,7 @@ _data.recycle();
 	* @param alignment:	alignment 0--align left , 1--align center, 2--align right
 	* @param callback  
 	*/
-@Override public void setAlignment(int alignment, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void setAlignment(int alignment, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -574,7 +574,7 @@ _data.recycle();
 	* set print font ,take affect on the later printing,unless you initialize the printer(support only one font 'gh' ,gh is a Chinese font,more fonts will be supported later)
 	* @param typeface:		font name
 	*/
-@Override public void setFontName(java.lang.String typeface, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void setFontName(java.lang.String typeface, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -596,7 +596,7 @@ _data.recycle();
 	* Adjust the font size will affect the character width,the number of characters per line will also change
 	* @param fontsize:	
 	*/
-@Override public void setFontSize(float fontsize, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void setFontSize(float fontsize, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -616,7 +616,7 @@ _data.recycle();
 	* print line ,automatic reline at the end of line. The line of characters will not be printed unless you forcing a newline
 	* @param characters:	 characters of word what you want print
 	*/
-@Override public void printText(java.lang.String text, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void printText(java.lang.String text, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -639,7 +639,7 @@ _data.recycle();
 	* @param typeface:		font name(only font 'gh' was supported right now)
 	* @param fontsize:		font size
 	*/
-@Override public void printTextWithFont(java.lang.String text, java.lang.String typeface, float fontsize, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void printTextWithFont(java.lang.String text, java.lang.String typeface, float fontsize, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -666,7 +666,7 @@ _data.recycle();
 	* 
 	* Note:the array lenth of three params should be accordance, if the lenth of colsText[i] is larger than colsWidth[i],the word will reline
 	*/
-@Override public void printColumnsText(java.lang.String[] colsTextArr, int[] colsWidthArr, int[] colsAlign, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void printColumnsText(java.lang.String[] colsTextArr, int[] colsWidthArr, int[] colsAlign, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -689,7 +689,7 @@ _data.recycle();
 	*print picture
 	* @param bitmap: 	The maximum width 384 pixels, it will callback exception while over the pixels.
 	*/
-@Override public void printBitmap(android.graphics.Bitmap bitmap, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void printBitmap(android.graphics.Bitmap bitmap, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -729,7 +729,7 @@ _data.recycle();
 	* @param width: 		The width of bar code,data range 2 to 6,default value is 2
 	* @param textposition:	Text-align 0--don't print, 1-- word above the barcode,2--word below the barcode 3.both word above and below 
 	*/
-@Override public void printBarCode(java.lang.String data, int symbology, int height, int width, int textposition, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void printBarCode(java.lang.String data, int symbology, int height, int width, int textposition, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -759,7 +759,7 @@ _data.recycle();
 	*                2 -- error correction level Q (25%)，
 	*                3 -- error correction level H (30%) 
 	*/
-@Override public void printQRCode(java.lang.String data, int modulesize, int errorlevel, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void printQRCode(java.lang.String data, int modulesize, int errorlevel, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -783,7 +783,7 @@ _data.recycle();
 	* @param text:	 the characters of word what you want print 
 	* 
 	*/
-@Override public void printOriginalText(java.lang.String text, sunmi.printer.ICallback callback) throws android.os.RemoteException
+@Override public void printOriginalText(java.lang.String text, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -907,13 +907,13 @@ public java.lang.String getServiceVersion() throws android.os.RemoteException;
 	 * @param callback 
 	 * @return
 	 */
-public void printerInit(sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void printerInit(sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* 
 	* Printer self-inspection, the printer will print a page
 	* @param callback 
 	*/
-public void printerSelfChecking(sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void printerSelfChecking(sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* 
 	* Getting the printer board serial number
@@ -933,7 +933,7 @@ public java.lang.String getPrinterModal() throws android.os.RemoteException;
 	* 
 	* Getting the print head's  printing length 
 	*/
-public void getPrintedLength(sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void getPrintedLength(sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	 * 
 	 * running a paper(force a newline,running n line before stop)
@@ -941,39 +941,39 @@ public void getPrintedLength(sunmi.printer.ICallback callback) throws android.os
 	 * @param callback  
 	 * @return
 	 */
-public void lineWrap(int n, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void lineWrap(int n, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* 
 	* Using original caommand
 	* @param data	        command
 	* @param callback  
 	*/
-public void sendRAWData(byte[] data, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void sendRAWData(byte[] data, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* 
 	* Set the alignment mode, affect the later priting ,unless you are initialized
 	* @param alignment:	alignment 0--align left , 1--align center, 2--align right
 	* @param callback  
 	*/
-public void setAlignment(int alignment, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void setAlignment(int alignment, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* 
 	* set print font ,take affect on the later printing,unless you initialize the printer(support only one font 'gh' ,gh is a Chinese font,more fonts will be supported later)
 	* @param typeface:		font name
 	*/
-public void setFontName(java.lang.String typeface, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void setFontName(java.lang.String typeface, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* setting font size ,afect the later printig ,unless you are initialized.
 	* Note: setting font size is a method over international standard cammand
 	* Adjust the font size will affect the character width,the number of characters per line will also change
 	* @param fontsize:	
 	*/
-public void setFontSize(float fontsize, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void setFontSize(float fontsize, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* print line ,automatic reline at the end of line. The line of characters will not be printed unless you forcing a newline
 	* @param characters:	 characters of word what you want print
 	*/
-public void printText(java.lang.String text, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void printText(java.lang.String text, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* 
 	* print specified word,take effect on this time
@@ -981,7 +981,7 @@ public void printText(java.lang.String text, sunmi.printer.ICallback callback) t
 	* @param typeface:		font name(only font 'gh' was supported right now)
 	* @param fontsize:		font size
 	*/
-public void printTextWithFont(java.lang.String text, java.lang.String typeface, float fontsize, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void printTextWithFont(java.lang.String text, java.lang.String typeface, float fontsize, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* print a line of a table ,you can setting col width、alignment.
 	* 
@@ -991,13 +991,13 @@ public void printTextWithFont(java.lang.String text, java.lang.String typeface, 
 	* 
 	* Note:the array lenth of three params should be accordance, if the lenth of colsText[i] is larger than colsWidth[i],the word will reline
 	*/
-public void printColumnsText(java.lang.String[] colsTextArr, int[] colsWidthArr, int[] colsAlign, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void printColumnsText(java.lang.String[] colsTextArr, int[] colsWidthArr, int[] colsAlign, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* 
 	*print picture
 	* @param bitmap: 	The maximum width 384 pixels, it will callback exception while over the pixels.
 	*/
-public void printBitmap(android.graphics.Bitmap bitmap, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void printBitmap(android.graphics.Bitmap bitmap, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* 
 	* print one dimensional code
@@ -1016,7 +1016,7 @@ public void printBitmap(android.graphics.Bitmap bitmap, sunmi.printer.ICallback 
 	* @param width: 		The width of bar code,data range 2 to 6,default value is 2
 	* @param textposition:	Text-align 0--don't print, 1-- word above the barcode,2--word below the barcode 3.both word above and below 
 	*/
-public void printBarCode(java.lang.String data, int symbology, int height, int width, int textposition, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void printBarCode(java.lang.String data, int symbology, int height, int width, int textposition, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* print qr-code
 	* @param data:			qr-code data
@@ -1027,14 +1027,14 @@ public void printBarCode(java.lang.String data, int symbology, int height, int w
 	*                2 -- error correction level Q (25%)，
 	*                3 -- error correction level H (30%) 
 	*/
-public void printQRCode(java.lang.String data, int modulesize, int errorlevel, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void printQRCode(java.lang.String data, int modulesize, int errorlevel, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* 
 	* print word, automatic reline while the line is full.
 	* @param text:	 the characters of word what you want print 
 	* 
 	*/
-public void printOriginalText(java.lang.String text, sunmi.printer.ICallback callback) throws android.os.RemoteException;
+public void printOriginalText(java.lang.String text, sunmi.printer.driver.ICallback callback) throws android.os.RemoteException;
 /**
 	* 
 	* Print the buffer content

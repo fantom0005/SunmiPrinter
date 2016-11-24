@@ -4,35 +4,35 @@
  * This file is auto-generated.  DO NOT MODIFY.
  * Original file: /home/fantom/Desktop/PrinterTestDemo/PrinterTestDemo/src/woyou/aidlservice/jiuiv5/ICallback.aidl
  */
-package sunmi.printer;
+package sunmi.printer.driver;
 /**
  * printing server result callback
  */
 public interface ICallback extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements sunmi.printer.ICallback
+public static abstract class Stub extends android.os.Binder implements sunmi.printer.driver.ICallback
 {
-private static final java.lang.String DESCRIPTOR = "sunmi.printer.ICallback";
+private static final java.lang.String DESCRIPTOR = "sunmi.printer.driver.ICallback";
 /** Construct the stub at attach it to the interface. */
 public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
 /**
- * Cast an IBinder object into an sunmi.printer.ICallback interface,
+ * Cast an IBinder object into an sunmi.printer.driver.ICallback interface,
  * generating a proxy if needed.
  */
-public static sunmi.printer.ICallback asInterface(android.os.IBinder obj)
+public static sunmi.printer.driver.ICallback asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
 }
 android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-if (((iin!=null)&&(iin instanceof sunmi.printer.ICallback))) {
-return ((sunmi.printer.ICallback)iin);
+if (((iin!=null)&&(iin instanceof sunmi.printer.driver.ICallback))) {
+return ((sunmi.printer.driver.ICallback)iin);
 }
-return new sunmi.printer.ICallback.Stub.Proxy(obj);
+return new sunmi.printer.driver.ICallback.Stub.Proxy(obj);
 }
 @Override public android.os.IBinder asBinder()
 {
@@ -76,7 +76,7 @@ return true;
 }
 return super.onTransact(code, data, reply, flags);
 }
-private static class Proxy implements sunmi.printer.ICallback
+private static class Proxy implements sunmi.printer.driver.ICallback
 {
 private android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)

@@ -5,8 +5,8 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CordovaInterface;
 import java.lang.Exception;
-import sunmi.printer.ICallback;
-import sunmi.printer.IWoyouService;
+import sunmi.printer.driver.ICallback;
+import sunmi.printer.driver.IWoyouService;
 import sunmi.printer.ThreadPoolManager;
 import android.content.ServiceConnection;
 import android.content.ComponentName;
@@ -67,9 +67,9 @@ public class SunmiPrinter extends CordovaPlugin {
         Context context = this.cordova.getActivity().getApplicationContext(); 
 
         Intent intent=new Intent();
-		intent.setPackage("sunmi.printer");
-		intent.setAction("sunmi.printer.IWoyouService");
-		context.startService(intent);
+		intent.setPackage("sunmi.printer.driver");
+		intent.setAction("sunmi.printer.driver.IWoyouService");
+		this.cordova.getActivity().startActivity(intent);
 		context.bindService(intent, connService, Context.BIND_AUTO_CREATE);
     }
 
