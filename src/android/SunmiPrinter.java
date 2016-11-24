@@ -73,7 +73,7 @@ public class SunmiPrinter extends CordovaPlugin {
 		context.bindService(intent, connService, Context.BIND_AUTO_CREATE);
         String add = "";
         if(connService != null) add += "connService is defined";
-        if(woyouService != null) add += "woyhuye is defined";
+        if(woyouService != null) add += "    woyhuye is defined";
         asd = "asdsa "+add;
     }
 
