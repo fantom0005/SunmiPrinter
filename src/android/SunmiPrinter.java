@@ -13,7 +13,6 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.content.Intent;
 import android.content.Context;
-import android.app.Activity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -63,7 +62,7 @@ public class SunmiPrinter extends CordovaPlugin {
 			}
 		};	
 
-        Activity context = cordova.getActivity().getApplicationContext();
+        Context context=this.cordova.getActivity().getApplicationContext(); 
 
         Intent intent=new Intent();
 		intent.setPackage("sunmi.printer");
