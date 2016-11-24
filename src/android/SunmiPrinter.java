@@ -44,8 +44,7 @@ public class SunmiPrinter extends CordovaPlugin {
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-        super.initialize(cordova, webView);
-        Log.v(TAG,"printlength:\n");	
+        super.initialize(cordova, webView);	
         callback = new ICallback.Stub() {
 			
 			@Override
@@ -87,6 +86,7 @@ public class SunmiPrinter extends CordovaPlugin {
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
             try{
+                this.printText();
                 woyouService.printText("Hello",callback);
                 callbackContext.success(message);
             }catch(Exception e) {
@@ -97,17 +97,17 @@ public class SunmiPrinter extends CordovaPlugin {
         }
     }
 
-    // private void printText(){
-    //     ThreadPoolManager.getInstance().executeTask(new Runnable(){
-    //         @Override
-	// 		public void run() {
-    //             try {
-	// 				woyouService.printText("Hello",callback);
-	// 			} catch (RemoteException e) {
-	// 				// e.printStackTrace();
-	// 			}
-    //         }
-    //     });
+    private void printText(){
+        ThreadPoolManager.getInstance().executeTask(new Runnable(){
+            @Override
+			public void run() {
+                // try {
+				// 	woyouService.printText("Hello",callback);
+				// } catch (RemoteException e) {
+				// 	// e.printStackTrace();
+				// }
+            }
+        });
         
-    // }
+    }
 }
