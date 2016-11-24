@@ -65,7 +65,7 @@ public class SunmiPrinter extends CordovaPlugin {
 			}
 		};	
 
-        Activiti context = cordova.getActivity(); 
+        Activity context = cordova.getActivity(); 
 
         Intent intent=new Intent();
 		intent.setPackage("sunmi.printer.driver");
