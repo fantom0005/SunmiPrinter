@@ -27,24 +27,18 @@ public class SunmiPrinter extends CordovaPlugin {
     private static final String TAG = "PrinterTestDemo";
     private IWoyouService woyouService;
     private ICallback callback = null;
-    static String asd = "";
-
-    static void debug(String str){
-        asd += "  " + str;
-    }
+    private String asd = "";
 
     private ServiceConnection connService = new ServiceConnection() {
 
 		@Override
 		public void onServiceDisconnected(ComponentName name) {
 			woyouService = null;
-            SunmiPrinter.debug("disconnect servise");
 		}
 
 		@Override
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			woyouService = IWoyouService.Stub.asInterface(service);
-            SunmiPrinter.debug("connect servise");
 		}
 	};
 
@@ -83,6 +77,8 @@ public class SunmiPrinter extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
             String message = args.getString(0);
+            asd = "";
+            if(woyouService != null) asd += "woy-huyey is defined! blyat";
             this.coolMethod(message, callbackContext);
             return true;
         }
@@ -93,7 +89,6 @@ public class SunmiPrinter extends CordovaPlugin {
         if (message != null && message.length() > 0) {
             try{
                 callbackContext.success(asd);
-                this.printText();
                 woyouService.printText("Hello",callback);
                 callbackContext.success(message);
             }catch(Exception e) {
