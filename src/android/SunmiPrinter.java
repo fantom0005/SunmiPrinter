@@ -88,7 +88,7 @@ public class SunmiPrinter extends CordovaPlugin {
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
             try{
-                callbackContext.success(asd);
+                // callbackContext.success(asd);
                 woyouService.printText("Hello",callback);
                 callbackContext.success(message);
             }catch(Exception e) {
