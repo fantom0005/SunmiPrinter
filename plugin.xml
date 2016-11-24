@@ -16,10 +16,28 @@
         <source-file src="src/android/print/IWoyouService.java" target-dir="src/sunmi/printer" />
         <source-file src="src/android/print/ThreadPoolManager.java" target-dir="src/sunmi/printer" />
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+        <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" 
+          android:label="@string/activity_name" 
+          android:launchMode="singleTask" 
+          android:name="MainActivity" 
+          android:theme="@android:style/Theme.Holo.Light" 
+          android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:label="@string/launcher_name">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
         <uses-permission android:name="android.permission.INTERNET" />
     </platform>
 </plugin>
