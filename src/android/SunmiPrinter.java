@@ -27,18 +27,24 @@ public class SunmiPrinter extends CordovaPlugin {
     private static final String TAG = "PrinterTestDemo";
     private IWoyouService woyouService;
     private ICallback callback = null;
-    private String asd = null;
+    private String asd = "";
+
+    private void debug(String str){
+        asd += "  " + str;
+    }
 
     private ServiceConnection connService = new ServiceConnection() {
 
 		@Override
 		public void onServiceDisconnected(ComponentName name) {
 			woyouService = null;
+            this.debug("disconnect servise");
 		}
 
 		@Override
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			woyouService = IWoyouService.Stub.asInterface(service);
+            this.debug("connect servise");
 		}
 	};
 
@@ -71,10 +77,6 @@ public class SunmiPrinter extends CordovaPlugin {
 		intent.setAction("sunmi.printer.IWoyouService");
 		context.startService(intent);
 		context.bindService(intent, connService, Context.BIND_AUTO_CREATE);
-        String add = "";
-        if(connService != null) add += "connService is defined";
-        if(woyouService != null) add += "    woyhuye is defined";
-        asd = "asdsa "+add;
     }
 
     @Override
