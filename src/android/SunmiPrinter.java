@@ -25,7 +25,7 @@ import org.json.JSONObject;
  */
 public class SunmiPrinter extends CordovaPlugin {
     private static final String TAG = "PrinterTestDemo";
-    static IWoyouService woyouService;
+    static final IWoyouService woyouService;
     private ICallback callback = null;
     static String asd = "";
 
