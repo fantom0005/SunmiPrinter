@@ -15,5 +15,10 @@
         <source-file src="src/android/print/ICallback.aidl" target-dir="src/sunmi/printer" />
         <source-file src="src/android/print/IWoyouService.aidl" target-dir="src/sunmi/printer" />
         <source-file src="src/android/print/ThreadPoolManager.java" target-dir="src/sunmi/printer" />
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
     </platform>
 </plugin>
