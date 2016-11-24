@@ -11,6 +11,8 @@ import android.content.ServiceConnection;
 import android.content.ComponentName;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.content.Intent;
+import android.content.Context;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,6 +61,12 @@ public class SunmiPrinter extends CordovaPlugin {
 				// 	}});				
 			}
 		};	
+
+        Intent intent=new Intent();
+		intent.setPackage("sunmi.printer");
+		intent.setAction("sunmi.printer.IWoyouService");
+		startService(intent);
+		bindService(intent, connService, Context.BIND_AUTO_CREATE);
     }
 
     @Override
