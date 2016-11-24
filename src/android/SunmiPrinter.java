@@ -22,7 +22,7 @@ import org.json.JSONObject;
 public class SunmiPrinter extends CordovaPlugin {
 
     private IWoyouService woyouService;
-    private ICallback callback = null;
+    final private ICallback callback = null;
 
     private ServiceConnection connService = new ServiceConnection() {
 
