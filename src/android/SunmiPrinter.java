@@ -7,6 +7,7 @@ import org.apache.cordova.CordovaInterface;
 
 import sunmi.printer.ICallback;
 import sunmi.printer.IWoyouService;
+import sunmi.printer.ThreadPoolManager;
 import android.content.ServiceConnection;
 import android.content.ComponentName;
 import android.os.IBinder;
@@ -62,7 +63,7 @@ public class SunmiPrinter extends CordovaPlugin {
 			}
 		};	
 
-        Context context=this.cordova.getActivity().getApplicationContext(); 
+        Context context = this.cordova.getActivity().getApplicationContext(); 
 
         Intent intent=new Intent();
 		intent.setPackage("sunmi.printer");
@@ -87,5 +88,19 @@ public class SunmiPrinter extends CordovaPlugin {
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
+    }
+
+    private void printText(){
+        ThreadPoolManager.getInstance().executeTask(new Runnable(){
+            @Override
+			public void run() {
+                try {
+					woyouService.printText("Hello",callback);
+				} catch (RemoteException e) {
+					e.printStackTrace();
+				}
+            }
+        });
+        
     }
 }
