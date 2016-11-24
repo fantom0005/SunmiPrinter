@@ -14,5 +14,6 @@
         <source-file src="src/android/SunmiPrinter.java" target-dir="src/sunmi/printer" />
         <source-file src="src/android/print/ICallback.aidl" target-dir="src/sunmi/printer" />
         <source-file src="src/android/print/IWoyouService.aidl" target-dir="src/sunmi/printer" />
+        <source-file src="src/android/print/ThreadPoolManager.java" target-dir="src/sunmi/printer" />
     </platform>
 </plugin>

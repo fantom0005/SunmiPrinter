@@ -2,6 +2,8 @@ package sunmi.printer;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.CordovaInterface;
 
 import sunmi.printer.ICallback;
 import sunmi.printer.IWoyouService;
@@ -34,6 +36,12 @@ public class SunmiPrinter extends CordovaPlugin {
 			woyouService = IWoyouService.Stub.asInterface(service);
 		}
 	};
+
+    @Override
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+        // your init code here
+    }
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
