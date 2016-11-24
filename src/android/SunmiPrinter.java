@@ -104,7 +104,7 @@ public class SunmiPrinter extends CordovaPlugin {
                 try {
 					woyouService.printText("Hello",callback);
 				} catch (RemoteException e) {
-					e.printStackTrace();
+					// e.printStackTrace();
 				}
             }
         });
