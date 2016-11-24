@@ -25,7 +25,7 @@ import org.json.JSONObject;
  */
 public class SunmiPrinter extends CordovaPlugin {
     private static final String TAG = "PrinterTestDemo";
-    static final IWoyouService woyouService;
+    private IWoyouService woyouService;
     private ICallback callback = null;
     static String asd = "";
 
@@ -37,13 +37,13 @@ public class SunmiPrinter extends CordovaPlugin {
 
 		@Override
 		public void onServiceDisconnected(ComponentName name) {
-			SunmiPrinter.woyouService = null;
+			woyouService = null;
             SunmiPrinter.debug("disconnect servise");
 		}
 
 		@Override
 		public void onServiceConnected(ComponentName name, IBinder service) {
-			SunmiPrinter.woyouService = IWoyouService.Stub.asInterface(service);
+			woyouService = IWoyouService.Stub.asInterface(service);
             SunmiPrinter.debug("connect servise");
 		}
 	};
