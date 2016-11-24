@@ -5,7 +5,7 @@
 
 package sunmi.printer;
 
-import woyou.aidlservice.jiuiv5.ICallback;
+import sunmi.printer.ICallback;
 import android.graphics.Bitmap;
 
 interface IWoyouService
