@@ -27,6 +27,7 @@ public class SunmiPrinter extends CordovaPlugin {
     private static final String TAG = "PrinterTestDemo";
     private IWoyouService woyouService;
     private ICallback callback = null;
+    private String asd = null;
 
     private ServiceConnection connService = new ServiceConnection() {
 
@@ -71,6 +72,7 @@ public class SunmiPrinter extends CordovaPlugin {
 		intent.setAction("sunmi.printer.IWoyouService");
 		context.startService(intent);
 		context.bindService(intent, connService, Context.BIND_AUTO_CREATE);
+        asd = "asdsa";
     }
 
     @Override
@@ -86,6 +88,7 @@ public class SunmiPrinter extends CordovaPlugin {
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
             try{
+                callbackContext.success(asd);
                 this.printText();
                 woyouService.printText("Hello",callback);
                 callbackContext.success(message);
