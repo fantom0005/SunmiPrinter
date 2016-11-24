@@ -70,7 +70,7 @@ public class SunmiPrinter extends CordovaPlugin {
         Intent intent=new Intent();
 		intent.setPackage("sunmi.printer.driver");
 		intent.setAction("sunmi.printer.driver.IWoyouService");
-		content.startService(intent);
+		context.startService(intent);
 		context.bindService(intent, connService, Context.BIND_AUTO_CREATE);
     }
 
