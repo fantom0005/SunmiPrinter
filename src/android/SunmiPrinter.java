@@ -29,9 +29,6 @@ public class SunmiPrinter extends CordovaPlugin {
     private ICallback callback = null;
     private String asd = "";
 
-    private void debug(String str){
-        asd += "  " + str;
-    }
 
     private ServiceConnection connService = new ServiceConnection() {
 
@@ -114,7 +111,10 @@ public class SunmiPrinter extends CordovaPlugin {
 				// 	// e.printStackTrace();
 				// }
             }
-        });
-        
+        });        
+    }
+    
+    private void debug(String str){
+        asd += "  " + str;
     }
 }
