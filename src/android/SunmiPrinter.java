@@ -10,6 +10,7 @@ import sunmi.printer.IWoyouService;
 import android.content.ServiceConnection;
 import android.content.ComponentName;
 import android.os.IBinder;
+import android.os.RemoteException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,7 +41,25 @@ public class SunmiPrinter extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        // your init code here
+        callback = new ICallback.Stub() {
+			
+			@Override
+			public void onRunResult(final boolean success) throws RemoteException {
+			}
+			
+			@Override
+			public void onReturnString(final String value) throws RemoteException {			
+			}
+			
+			@Override
+			public void onRaiseException(int code, final String msg) throws RemoteException {
+				runOnUiThread(new Runnable(){
+					@Override
+					public void run() {
+					}});
+				
+			}
+		};	
     }
 
     @Override
