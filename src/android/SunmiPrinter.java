@@ -33,7 +33,6 @@ public class SunmiPrinter extends CordovaPlugin {
 
 		@Override
 		public void onServiceDisconnected(ComponentName name) {
-
 			woyouService = null;
 		}
 
@@ -72,7 +71,7 @@ public class SunmiPrinter extends CordovaPlugin {
 		intent.setAction("sunmi.printer.IWoyouService");
 		context.startService(intent);
 		context.bindService(intent, connService, Context.BIND_AUTO_CREATE);
-        asd = "asdsa";
+        asd = "asdsa "+connService.toString() + "   " + woyouService.toString();
     }
 
     @Override
