@@ -8,7 +8,6 @@ import java.lang.Exception;
 import woyou.aidlservice.jiuiv5.ICallback;
 import woyou.aidlservice.jiuiv5.IWoyouService;
 import android.app.Activity;
-import sunmi.printer.ThreadPoolManager;
 import android.content.ServiceConnection;
 import android.content.ComponentName;
 import android.os.IBinder;
@@ -109,16 +108,11 @@ public class SunmiPrinter extends CordovaPlugin {
     }
 
     private void printText(){
-        ThreadPoolManager.getInstance().executeTask(new Runnable(){
-            @Override
-			public void run() {
-                // try {
-				// 	woyouService.printText("Hello",callback);
-				// } catch (RemoteException e) {
-				// 	// e.printStackTrace();
-				// }
+            try {
+                woyouService.printText("Hello",callback);
+            } catch (RemoteException e) {
+                // e.printStackTrace();
             }
-        });        
     }
 
 }
