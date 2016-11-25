@@ -12,7 +12,7 @@
             </feature>
         </config-file>
         <config-file target="res/xml/config.xml">
-            <feature name="SunmiPrinter">
+            <feature name="woyou.aidlservice.jiuiv5">
                 <param name="android-package" value="woyou.aidlservice.jiuiv5" />
             </feature>
         </config-file>
