@@ -5,7 +5,7 @@
         <clobbers target="cordova.plugins.SunmiPrinter" />
     </js-module>
     <platform name="android">
-        <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+        <!--<preference name="AndroidPersistentFileLocation" value="Compatibility" />-->
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="SunmiPrinter">
                 <param name="android-package" value="sunmi.printer.SunmiPrinter" />
