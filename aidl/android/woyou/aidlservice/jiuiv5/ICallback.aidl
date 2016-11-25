@@ -1,4 +1,4 @@
-package sunmi.printer;
+package woyou.aidlservice.jiuiv5;
 
 /**
  * printing server result callback

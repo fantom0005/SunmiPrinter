@@ -3,9 +3,9 @@
 * AIDL Version: 1.1
 */
 
-package sunmi.printer;
+package woyou.aidlservice.jiuiv5;
 
-import sunmi.printer.ICallback;
+import woyou.aidlservice.jiuiv5.ICallback;
 import android.graphics.Bitmap;
 
 interface IWoyouService

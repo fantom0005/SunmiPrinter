@@ -5,8 +5,8 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CordovaInterface;
 import java.lang.Exception;
-import sunmi.printer.driver.ICallback;
-import sunmi.printer.driver.IWoyouService;
+import woyou.aidlservice.jiuiv5.ICallback;
+import woyou.aidlservice.jiuiv5.IWoyouService;
 import android.app.Activity;
 import sunmi.printer.ThreadPoolManager;
 import android.content.ServiceConnection;
@@ -43,7 +43,7 @@ public class SunmiPrinter extends CordovaPlugin {
 		}
 	};
 
-    @Override
+    @Overrid
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);	
         callback = new ICallback.Stub() {
@@ -68,8 +68,8 @@ public class SunmiPrinter extends CordovaPlugin {
         Activity context = cordova.getActivity(); 
 
         Intent intent=new Intent();
-		intent.setPackage("sunmi.printer.driver");
-		intent.setAction("sunmi.printer.driver.IWoyouService");
+		intent.setPackage("woyou.aidlservice.jiuiv5");
+		intent.setAction("woyou.aidlservice.jiuiv5.IWoyouService");
 		context.startService(intent);
 		context.bindService(intent, connService, Context.BIND_AUTO_CREATE);
     }
