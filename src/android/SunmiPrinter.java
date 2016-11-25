@@ -42,7 +42,7 @@ public class SunmiPrinter extends CordovaPlugin {
 		}
 	};
 
-    @Overrid
+    @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);	
         callback = new ICallback.Stub() {

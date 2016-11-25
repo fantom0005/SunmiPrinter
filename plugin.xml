@@ -12,8 +12,8 @@
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
         <source-file src="src/android/SunmiPrinter.java" target-dir="src/sunmi/printer" />
-        <source-file src="aidl/android/woyou/aidlservice/jiuiv5/ICallback.aidl" target-dir="woyou/aidlservice/jiuiv5" />
-        <source-file src="aidl/android/woyou/aidlservice/jiuiv5/IWoyouService.aidl" target-dir="woyou/aidlservice/jiuiv5" />
+        <source-file src="src/woyou/aidlservice/jiuiv5/ICallback.aidl" target-dir="woyou/aidlservice/jiuiv5" />
+        <source-file src="src/woyou/aidlservice/jiuiv5/IWoyouService.aidl" target-dir="woyou/aidlservice/jiuiv5" />
         <source-file src="src/android/libs/zxing.jar" target-dir="libs" />
         <source-file src="src/android/libs/android-support-v4.jar" target-dir="libs" />
 
