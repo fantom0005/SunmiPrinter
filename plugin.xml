@@ -15,6 +15,8 @@
         <source-file src="src/android/SunmiPrinter.java" target-dir="src/sunmi/printer" />
         <source-file src="src/android/woyou/aidlservice/jiuiv5/ICallback.aidl" target-dir="woyou/aidlservice/jiuiv5" />
         <source-file src="src/android/woyou/aidlservice/jiuiv5/IWoyouService.aidl" target-dir="woyou/aidlservice/jiuiv5" />
+        <source-file src="src/android/woyou/aidlservice/jiuiv5/ICallback.java" target-dir="woyou/aidlservice/jiuiv5" />
+        <source-file src="src/android/woyou/aidlservice/jiuiv5/IWoyouService.java" target-dir="woyou/aidlservice/jiuiv5" />
         <source-file src="src/android/libs/zxing.jar" target-dir="libs" />
         <source-file src="src/android/libs/android-support-v4.jar" target-dir="libs" />
 
