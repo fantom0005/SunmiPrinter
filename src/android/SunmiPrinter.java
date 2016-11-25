@@ -89,14 +89,6 @@ public class SunmiPrinter extends CordovaPlugin {
         if (message != null && message.length() > 0) {
             try{
                 // callbackContext.success(asd);
-                Activity context = this.cordova.getActivity(); 
-
-                Intent intent=new Intent();
-                intent.setPackage("sunmi.printer.driver");
-                intent.setAction("sunmi.printer.driver.IWoyouService");
-                context.startService(intent);
-                context.bindService(intent, connService, Context.BIND_AUTO_CREATE);
-
                 woyouService.printText("Hello",callback);
                 callbackContext.success(message);
             }catch(Exception e) {
