@@ -11,8 +11,8 @@
                 <param name="android-package" value="sunmi.printer.SunmiPrinter" />
             </feature>
         </config-file>
-        <source-file src="src/android/woyou/aidlservice/jiuiv5/ICallback.aidl" target-dir="woyou/aidlservice/jiuiv5" />
-        <source-file src="src/android/woyou/aidlservice/jiuiv5/IWoyouService.aidl" target-dir="woyou/aidlservice/jiuiv5" />
+        <source-file src="src/android/woyou/aidlservice/jiuiv5/ICallback.java" target-dir="src/woyou/aidlservice/jiuiv5" />
+        <source-file src="src/android/woyou/aidlservice/jiuiv5/IWoyouService.java" target-dir="src/woyou/aidlservice/jiuiv5" />
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
         <source-file src="src/android/SunmiPrinter.java" target-dir="src/sunmi/printer" />
         <source-file src="src/android/ThreadPoolManager.java" target-dir="src/sunmi/printer" />
