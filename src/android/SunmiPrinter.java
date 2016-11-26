@@ -87,24 +87,17 @@ public class SunmiPrinter extends CordovaPlugin {
 
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
-            try{
-                // callbackContext.success(asd);
-                woyouService.printText("Hello",callback);
-                callbackContext.success(message);
-            }catch(Exception e) {
-                callbackContext.error(e.getMessage());
-            }
+            ThreadPoolManager.getInstance().executeTask(new Runnable(){
+                @Override
+                public void run() {
+                try {
+                    woyouService.printText("Пошел на хуй \n", null);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            }});
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
     }
-
-    private void printText(){
-            try {
-                woyouService.printText("Hello",callback);
-            } catch (RemoteException e) {
-                // e.printStackTrace();
-            }
-    }
-
 }
