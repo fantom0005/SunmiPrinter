@@ -11,6 +11,10 @@
                 <param name="android-package" value="sunmi.printer.SunmiPrinter" />
             </feature>
         </config-file>
+         <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.google.zxing.client.android.CaptureActivity" android:clearTaskOnLaunch="true" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden" android:exported="false" />
+            <activity android:name="com.google.zxing.client.android.encode.EncodeActivity" android:label="Share"/>
+        </config-file>
         <source-file src="src/android/woyou/aidlservice/jiuiv5/ICallback.java" target-dir="src/woyou/aidlservice/jiuiv5" />
         <source-file src="src/android/woyou/aidlservice/jiuiv5/IWoyouService.java" target-dir="src/woyou/aidlservice/jiuiv5" />
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
