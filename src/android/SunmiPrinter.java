@@ -94,7 +94,7 @@ public class SunmiPrinter extends CordovaPlugin {
                             // for (int i = 0; i < messages.length; i++){
                             woyouService.printText(messages, null);                    
                             // }
-                            byte[] bytes = BytesUtil.getZXingQRCode("56456165155454561", 240);
+                            byte[] bytes = BytesUtil.getZXingQRCode("56456165155454561", 480);
                             woyouService.sendRAWData(bytes, callback);
                             woyouService.lineWrap(4, null);                        
                         } catch (Exception e) {
