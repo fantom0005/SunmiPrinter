@@ -93,7 +93,7 @@ public class SunmiPrinter extends CordovaPlugin {
 
                     public void run() {
                         try {
-                            String[] parts = messages.split("|");
+                            String[] parts = messages.split("//");
                             woyouService.printTextWithFont("Bets ParyajPam\n", "", 44, null);
                             woyouService.printTextWithFont("Ticket:\n", "", 38, null);
                             for (int i = 0; i < parts.length; i++){
