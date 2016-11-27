@@ -107,7 +107,7 @@ public class SunmiPrinter extends CordovaPlugin {
                     }
                 }
 
-                ThreadPoolManager.getInstance().executeTask(new printTask(messages));
+                ThreadPoolManager.getInstance().executeTask(new printTask(messages, code));
                 callbackContext.success(messages);
             } else {
                 callbackContext.error("Expected one non-empty string argument.");
