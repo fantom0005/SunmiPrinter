@@ -24,10 +24,8 @@ import org.json.JSONObject;
  * This class echoes a string called from JavaScript.
  */
 public class SunmiPrinter extends CordovaPlugin {
-    private static final String TAG = "PrinterTestDemo";
     private IWoyouService woyouService;
     private ICallback callback = null;
-    private String asd = "";
 
     private ServiceConnection connService = new ServiceConnection() {
 
@@ -56,11 +54,7 @@ public class SunmiPrinter extends CordovaPlugin {
 			}
 			
 			@Override
-			public void onRaiseException(int code, final String msg) throws RemoteException {
-				// cordova.getActivity().runOnUiThread(new Runnable(){
-				// 	@Override
-				// 	public void run() {
-				// 	}});				
+			public void onRaiseException(int code, final String msg) throws RemoteException {		
 			}
 		};	
 
@@ -77,8 +71,6 @@ public class SunmiPrinter extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
             String message = args.getString(0);
-            asd = "";
-            if(woyouService != null) asd += "woy-huyey is defined! blyat";
             this.coolMethod(message, callbackContext);
             return true;
         }
@@ -91,7 +83,7 @@ public class SunmiPrinter extends CordovaPlugin {
                 @Override
                 public void run() {
                 try {
-                    woyouService.printText("Пошел на хуй \n", null);
+                    woyouService.printText("Пошел на хуй \n asdas", null);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
