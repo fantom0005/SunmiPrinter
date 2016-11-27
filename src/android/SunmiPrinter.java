@@ -97,7 +97,7 @@ public class SunmiPrinter extends CordovaPlugin {
                             woyouService.printTextWithFont("Bets ParyajPam\n", "", 44, null);
                             woyouService.printTextWithFont("Ticket:\n", "", 38, null);
                             for (int i = 0; i < parts.length; i++){
-                                woyouService.printText(parts[i], null);
+                                woyouService.printText(parts[i] + "\n", null);
                             }
                             byte[] bytes = BytesUtil.getZXingQRCode(code, 400);
                             woyouService.sendRAWData(bytes, callback); 
