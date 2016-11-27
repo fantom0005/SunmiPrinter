@@ -78,7 +78,7 @@ public class SunmiPrinter extends CordovaPlugin {
         return false;
     }
 
-    private void print(String messages) {
+    private void print(String messages, CallbackContext callbackContext) {
         if (messages != null && messages.length() > 0) {
 
             class printTask implements Runnable {
