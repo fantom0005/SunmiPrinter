@@ -87,7 +87,7 @@ public class SunmiPrinter extends CordovaPlugin {
                     String code;
                     
                     printTask(String _messages, String _code){
-                        messages = mesgs;
+                        messages = _messages;
                         code = _code;
                     }
 
