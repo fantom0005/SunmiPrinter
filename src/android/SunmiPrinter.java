@@ -107,7 +107,6 @@ public class SunmiPrinter extends CordovaPlugin {
             } else {
                 callbackContext.error("Expected one non-empty string argument.");
             }
-        }
         }catch(Exception e){
             callbackContext.error(e.getMessage());
         }
