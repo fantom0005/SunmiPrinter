@@ -1,4 +1,4 @@
-package com.test.printertestdemo;
+package sunmi.printer;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Hashtable;

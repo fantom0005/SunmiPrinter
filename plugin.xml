@@ -17,6 +17,7 @@
         <source-file src="src/android/SunmiPrinter.java" target-dir="src/sunmi/printer" />
         <source-file src="src/android/ThreadPoolManager.java" target-dir="src/sunmi/printer" />
         <source-file src="src/android/BitmapUtils.java" target-dir="src/sunmi/printer" />
+        <source-file src="src/android/BytesUtil.java" target-dir="src/sunmi/printer" />
 
         <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" 
           android:label="@string/activity_name" 
