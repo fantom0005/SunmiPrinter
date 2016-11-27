@@ -78,14 +78,14 @@ public class SunmiPrinter extends CordovaPlugin {
         return false;
     }
 
-    private void print(String[] message, CallbackContext callbackContext) {
-        if (message != null && message.length > 0) {
+    private void print(String[] messages, CallbackContext callbackContext) {
+        if (messages != null && messages.length > 0) {
             ThreadPoolManager.getInstance().executeTask(new Runnable(){
                 @Override
                 public void run() {
                 try {
-                    for (int i = 0; i < array.length; i++){
-                        woyouService.printText(array[i], null);                    
+                    for (int i = 0; i < messages.length; i++){
+                        woyouService.printText(messages[i], null);                    
                     }
                     woyouService.printText("Пошел на хуй \n asdas", null);
                     woyouService.printBarCode("2015112910", 8, 100, 2, 2, null);
