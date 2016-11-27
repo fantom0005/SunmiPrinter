@@ -79,32 +79,36 @@ public class SunmiPrinter extends CordovaPlugin {
     }
 
     private void print(String messages, CallbackContext callbackContext) {
-        if (messages != null && messages.length() > 0) {
+        try{        
+            if (messages != null && messages.length() > 0) {
 
-            class printTask implements Runnable {
-                String messages;
-                
-                printTask(String messages){
-                    messages = messages;
-                }
+                class printTask implements Runnable {
+                    String messages;
+                    
+                    printTask(String messages){
+                        messages = messages;
+                    }
 
-                public void run() {
-                    try {
-                        // for (int i = 0; i < messages.length; i++){
-                        woyouService.printText(messages, null);                    
-                        // }
-                        woyouService.printBarCode("2015112910", 8, 100, 2, 2, null);
-                        woyouService.lineWrap(4, null);                        
-                    } catch (RemoteException e) {
-                        e.printStackTrace();
+                    public void run() {
+                        try {
+                            // for (int i = 0; i < messages.length; i++){
+                            woyouService.printText(messages, null);                    
+                            // }
+                            woyouService.printBarCode("2015112910", 8, 100, 2, 2, null);
+                            woyouService.lineWrap(4, null);                        
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
-            }
 
-            ThreadPoolManager.getInstance().executeTask(new printTask(messages));
-            callbackContext.success("ok");
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
+                ThreadPoolManager.getInstance().executeTask(new printTask(messages));
+                callbackContext.success("ok");
+            } else {
+                callbackContext.error("Expected one non-empty string argument.");
+            }
         }
-    }
+        }catch(Exception e){
+            callbackContext.error(e.getMessage());
+        }
 }
