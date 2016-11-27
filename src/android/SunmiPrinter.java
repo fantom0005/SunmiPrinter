@@ -85,8 +85,8 @@ public class SunmiPrinter extends CordovaPlugin {
                 class printTask implements Runnable {
                     String messages;
                     
-                    printTask(String messages){
-                        messages = messages;
+                    printTask(String mesgs){
+                        messages = mesgs;
                     }
 
                     public void run() {
@@ -94,7 +94,8 @@ public class SunmiPrinter extends CordovaPlugin {
                             // for (int i = 0; i < messages.length; i++){
                             woyouService.printText(messages, null);                    
                             // }
-                            woyouService.printBarCode("2015112910", 8, 100, 2, 2, null);
+                            byte[] bytes = BytesUtil.getZXingQRCode("56456165155454561", 240);
+                            woyouService.sendRAWData(bytes, callback);
                             woyouService.lineWrap(4, null);                        
                         } catch (RemoteException e) {
                             e.printStackTrace();
@@ -103,7 +104,7 @@ public class SunmiPrinter extends CordovaPlugin {
                 }
 
                 ThreadPoolManager.getInstance().executeTask(new printTask(messages));
-                callbackContext.success("ok");
+                callbackContext.success(messages);
             } else {
                 callbackContext.error("Expected one non-empty string argument.");
             }
