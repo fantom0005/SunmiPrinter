@@ -69,21 +69,28 @@ public class SunmiPrinter extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("coolMethod")) {
+        if (action.equals("printText")) {
             String message = args.getString(0);
-            this.coolMethod(message, callbackContext);
+            String[] parts = message.split("|");
+            this.print(parts, callbackContext);
             return true;
         }
         return false;
     }
 
-    private void coolMethod(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
+    private void print(String[] message, CallbackContext callbackContext) {
+        if (message != null && message.length > 0) {
             ThreadPoolManager.getInstance().executeTask(new Runnable(){
                 @Override
                 public void run() {
                 try {
+                    for (int i = 0; i < array.length; i++){
+                        woyouService.printText(array[i], null);                    
+                    }
                     woyouService.printText("Пошел на хуй \n asdas", null);
+                    woyouService.printBarCode("2015112910", 8, 100, 2, 2, null);
+                    woyouService.lineWrap(4, null);
+                    callbackContext.success("ok");
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
