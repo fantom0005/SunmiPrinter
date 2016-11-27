@@ -110,4 +110,5 @@ public class SunmiPrinter extends CordovaPlugin {
         }catch(Exception e){
             callbackContext.error(e.getMessage());
         }
+    }
 }
