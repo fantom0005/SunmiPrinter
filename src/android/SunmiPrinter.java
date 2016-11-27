@@ -69,24 +69,26 @@ public class SunmiPrinter extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("printText")) {
-            String message = args.getString(0);
-            // final String[] parts = message.split("|");
-            this.print(message, callbackContext);
+        if (action.equals("printTicket")) {
+            String messages = args.getString(0);
+            String code = args.getString(1);
+            this.print(messages, code, callbackContext);
             return true;
         }
         return false;
     }
 
-    private void print(String messages, CallbackContext callbackContext) {
+    private void print(String messages, String code, CallbackContext callbackContext) {
         try{        
-            if (messages != null && messages.length() > 0) {
+            if (messages != null && messages.length() > 0 && code != null && code.length() > 0) {
 
                 class printTask implements Runnable {
                     String messages;
+                    String code;
                     
-                    printTask(String mesgs){
+                    printTask(String _messages, String _code){
                         messages = mesgs;
+                        code = _code;
                     }
 
                     public void run() {
@@ -94,9 +96,11 @@ public class SunmiPrinter extends CordovaPlugin {
                             // for (int i = 0; i < messages.length; i++){
                             woyouService.printText(messages, null);                    
                             // }
-                            byte[] bytes = BytesUtil.getZXingQRCode("56456165155454561", 400);
+                            byte[] bytes = BytesUtil.getZXingQRCode(code, 400);
                             woyouService.sendRAWData(bytes, callback);
-                            woyouService.lineWrap(4, null);                        
+                            woyouService.lineWrap(1, null);   
+                            woyouService.printText(code, null);  
+                            woyouService.lineWrap(4, null);                    
                         } catch (Exception e) {
                             // e.printStackTrace();
                         }
