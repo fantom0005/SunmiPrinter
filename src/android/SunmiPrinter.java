@@ -71,30 +71,29 @@ public class SunmiPrinter extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("printText")) {
             String message = args.getString(0);
-            final String[] parts = message.split("|");
-            this.print(parts, callbackContext);
+            // final String[] parts = message.split("|");
+            this.print(message, callbackContext);
             return true;
         }
         return false;
     }
 
-    private void print(String[] messages, CallbackContext callbackContext) {
-        if (messages != null && messages.length > 0) {
-            
+    private void print(String messages, CallbackContext callbackContext) {
+        if (messages != null && messages.length() > 0) {
+
             class printTask implements Runnable {
-                String[] messages;
+                String messages;
                 CallbackContext callbackContext;
-                printTask(String[] messages, CallbackContext callbackContext){
+                printTask(String messages, CallbackContext callbackContext){
                     messages = messages;
                     callbackContext = callbackContext;
                 }
 
-                @Override
                 public void run() {
                     try {
-                        for (int i = 0; i < messages.length; i++){
-                            woyouService.printText(messages[i], null);                    
-                        }
+                        // for (int i = 0; i < messages.length; i++){
+                        woyouService.printText(messages, null);                    
+                        // }
                         woyouService.printBarCode("2015112910", 8, 100, 2, 2, null);
                         woyouService.lineWrap(4, null);
                         callbackContext.success("ok");
