@@ -94,14 +94,13 @@ public class SunmiPrinter extends CordovaPlugin {
                     public void run() {
                         try {
                             String[] parts = messages.split("//");
-                            woyouService.printTextWithFont("Bets ParyajPam\n", "", 44, null);
-                            woyouService.printTextWithFont("Ticket:\n", "", 38, null);
+                            woyouService.printTextWithFont("Bets ParyajPam\n", "", 40, null);
                             for (int i = 0; i < parts.length; i++){
                                 woyouService.printText(parts[i] + "\n", null);
                             }
+                            woyouService.printTextWithFont("Code: " + code, "", 30, null);
                             byte[] bytes = BytesUtil.getZXingQRCode(code, 400);
                             woyouService.sendRAWData(bytes, callback); 
-                            woyouService.printTextWithFont("Code: " + code, "", 30, null);
                             woyouService.lineWrap(4, null);                    
                         } catch (Exception e) {
                             // e.printStackTrace();
