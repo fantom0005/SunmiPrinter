@@ -140,7 +140,7 @@ public class SunmiPrinter extends CordovaPlugin {
                             for (int i = 0; i < parts.length; i++){
                                 woyouService.printTextWithFont(parts[i] + "\n", "", 20, null);
                             }
-                            woyouService.lineWrap(2, null);
+                            woyouService.lineWrap(4, null);
                         } catch (Exception e) {
                             // e.printStackTrace();
                         }
