@@ -75,6 +75,11 @@ public class SunmiPrinter extends CordovaPlugin {
             this.print(messages, code, callbackContext);
             return true;
         }
+        if (action.equals("printText")) {
+            String messages = args.getString(0);
+            this.printText(messages, code, callbackContext);
+            return true;
+        }
         return false;
     }
 
@@ -109,6 +114,40 @@ public class SunmiPrinter extends CordovaPlugin {
                 }
 
                 ThreadPoolManager.getInstance().executeTask(new printTask(messages, code));
+                callbackContext.success(messages);
+            } else {
+                callbackContext.error("Expected one non-empty string argument.");
+            }
+        }catch(Exception e){
+            callbackContext.error(e.getMessage());
+        }
+    }
+    private void printText(String messages, CallbackContext callbackContext) {
+        try{        
+            if (messages != null && messages.length() > 0) {
+
+                class printTask implements Runnable {
+                    String messages;
+                    
+                    printTask(String _messages){
+                        messages = _messages;
+                    }
+
+                    public void run() {
+                        try {
+                            String[] parts = messages.split("//");
+                            woyouService.printTextWithFont("ParyajPam\n", "", 38, null);
+                            for (int i = 0; i < parts.length; i++){
+                                woyouService.printTextWithFont(parts[i] + "\n", "", 20, null);
+                            }
+                            woyouService.lineWrap(2, null);
+                        } catch (Exception e) {
+                            // e.printStackTrace();
+                        }
+                    }
+                }
+
+                ThreadPoolManager.getInstance().executeTask(new printTask(messages));
                 callbackContext.success(messages);
             } else {
                 callbackContext.error("Expected one non-empty string argument.");
