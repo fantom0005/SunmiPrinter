@@ -77,7 +77,7 @@ public class SunmiPrinter extends CordovaPlugin {
         }
         if (action.equals("printText")) {
             String messages = args.getString(0);
-            this.printText(messages, code, callbackContext);
+            this.printText(messages, callbackContext);
             return true;
         }
         return false;
